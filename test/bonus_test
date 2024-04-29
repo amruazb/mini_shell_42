@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Create some test files
+touch file1.txt file2.txt file3.txt
+
+# Test && operator
+echo "Testing && operator..."
+ls file1.txt && echo "File file1.txt exists"
+
+# Test || operator
+echo "Testing || operator..."
+ls file4.txt || echo "File file4.txt does not exist"
+
+# Test parentheses
+echo "Testing parentheses..."
+(ls file1.txt && echo "File file1.txt exists") || echo "File file1.txt does not exist"
+
+# Test wildcards in arguments
+echo "Testing wildcards in arguments..."
+ls *.txt
+
+# Clean up
+rm file*.txt
+
+echo "Script execution completed."

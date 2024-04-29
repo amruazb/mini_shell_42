@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Echo command
+echo "Testing echo command..."
+echo "Hello, world!"
+
+# Echo command with quotes
+echo "Testing echo command with quotes..."
+echo "Hello, \"world\"!"
+
+# Date command
+echo "Testing date command..."
+date
+
+# Print current working directory
+echo "Testing pwd command..."
+pwd
+
+# List files in current directory
+echo "Testing ls command..."
+ls
+
+# Make a directory
+echo "Testing mkdir command..."
+mkdir "test directory with spaces"
+
+# Change directory
+echo "Testing cd command..."
+cd "test directory with spaces"
+pwd
+
+# Remove directory
+echo "Testing rm command..."
+cd ..
+rm -r "test directory with spaces"
+
+

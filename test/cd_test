@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Initial working directory
+echo "Initial working directory:"
+/bin/ls -l
+
+# Move to a directory that exists
+echo "Testing cd with existing directory..."
+cd /tmp
+echo "Current directory after cd:"
+/bin/ls -l
+
+# Move to a directory that does not exist
+echo "Testing cd with non-existing directory..."
+cd /nonexistent
+if [ $? -eq 0 ]; then
+  echo "Successfully moved to non-existing directory."
+else
+  echo "Failed to move to non-existing directory."
+fi
+
+# Move using '.'
+echo "Testing cd with '.'..."
+cd .
+echo "Current directory after cd:"
+/bin/ls -l
+
+# Move using '..'
+echo "Testing cd with '..'..."
+cd ..
+echo "Current directory after cd:"
+/bin/ls -l
+
+# Move using multiple '..'
+echo "Testing cd with multiple '..'..."
+cd ../..
+echo "Current directory after cd:"
+/bin/ls -l
+

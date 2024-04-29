@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Test interpreting $ as an environment variable
+echo "Testing interpreting \$ as an environment variable..."
+echo "$HOME"
+
+# Test double quotes interpolation
+echo "Testing double quotes interpolation..."
+echo "$USER"
+
+
+# Check that USER variable exists
+echo "Checking if USER variable exists..."
+echo "$USER"
+
+echo "Script execution completed."

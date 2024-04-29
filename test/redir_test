@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Test redirection with < and >
+echo "Testing redirection with < and >..."
+echo "Hello, world!" > output.txt
+cat < output.txt
+
+# Test redirection with >>
+echo "Testing redirection with >>..."
+echo "Appending to the file..." >> output.txt
+cat output.txt
+
+# Test multiple tries of the same redirection
+echo "Testing multiple tries of the same redirection..."
+echo "First try" > output.txt
+echo "Second try" > output.txt
+cat output.txt
+
+# Test << redirection
+echo "Testing << redirection..."
+cat << EOF
+This is a test
+with multiple lines
+using << redirection.
+EOF
+
+# Clean up
+rm output.txt
+
+echo "Script execution completed."

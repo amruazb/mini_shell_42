@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Initial PATH value
+echo "Initial PATH value:"
+echo $PATH
+
+# Test executing commands without specifying paths
+echo "Testing executing commands without specifying paths..."
+ls
+wc -c <<< "Hello, world!"
+awk 'BEGIN {print "Hello from awk"}'
+
+# Unset the PATH variable
+echo "Unsetting the PATH variable..."
+unset PATH
+
+# Test executing commands after unsetting PATH
+echo "Testing executing commands after unsetting PATH..."
+ls
+wc -c <<< "Hello, world!"
+awk 'BEGIN {print "Hello from awk"}'
+
+# Set PATH to multiple directories
+echo "Setting PATH to multiple directories..."
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Test executing commands after setting PATH to multiple directories
+echo "Testing executing commands after setting PATH to multiple directories..."
+ls
+wc -c <<< "Hello, world!"
+awk 'BEGIN {print "Hello from awk"}'
+
+echo "Script execution completed."

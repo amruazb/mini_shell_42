@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Test commands with pipes
+echo "Testing commands with pipes..."
+
+# Command: cat file | grep bla | more
+echo "cat file | grep bla | more"
+echo "This is some text with bla" > file.txt
+cat file.txt | grep bla | more
+
+# Command: ls | grep filethatdoesntexist | more
+echo "ls | grep filethatdoesntexist | more"
+ls | grep filethatdoesntexist | more
+
+# Command: cat /etc/passwd | grep root | wc -l
+echo "cat /etc/passwd | grep root | wc -l"
+cat /etc/passwd | grep root | wc -l
+
+# Command: ps -ef | grep bash | grep -v grep | awk '{print $1}'
+echo "ps -ef | grep bash | grep -v grep | awk '{print $1}'"
+ps -ef | grep bash | grep -v grep | awk '{print $1}'
+
+# Command: find /usr/bin -type f | wc -l
+echo "find /usr/bin -type f | wc -l"
+find /usr/bin -type f | wc -l
+
+# Mix pipes and redirections
+echo "Mixing pipes and redirections..."
+
+# Command: ls -l | grep txt > file_list.txt
+echo "ls -l | grep txt > file_list.txt"
+ls -l | grep txt > file_list.txt
+
+# Command: cat file_list.txt | grep -v test | more
+echo "cat file_list.txt | grep -v test | more"
+cat file_list.txt | grep -v test | more
+
+# Clean up
+rm file.txt file_list.txt
+
+echo "Script execution completed."

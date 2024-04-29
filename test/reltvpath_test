@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Initial working directory
+echo "Initial working directory:"
+/bin/ls -l
+
+# Move to a directory using a relative path
+echo "Testing cd with relative path..."
+cd ../tmp
+echo "Current directory after cd:"
+/bin/ls -l
+
+# Move using complex relative path
+echo "Testing cd with complex relative path..."
+cd ../../../../usr/bin
+echo "Current directory after cd:"
+/bin/ls -l
+
+# Move back to the initial directory
+echo "Moving back to the initial directory..."
+cd -
+echo "Current directory after moving back:"
+/bin/ls -l
+
+echo "Script execution completed."

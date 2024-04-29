@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Set environment variable
+export MY_VAR="Hello from environment variable!"
+
+# Echo command with environment variable
+echo 'Testing echo command with environment variable...'
+echo '$MY_VAR'
+
+# Echo command with environment variable expanded
+echo 'Testing echo command with environment variable expanded...'
+echo "$MY_VAR"
+
+# Echo command with single quotes and whitespaces
+echo 'Testing echo command with single quotes and whitespaces...'
+echo 'Hello,     world!'
+
+# Pipes and redirection within single quotes
+echo 'Testing pipes and redirection within single quotes...'
+echo 'Hello, world!' | grep 'Hello' > output.txt
+
+# Read from file
+echo 'Testing reading from file...'
+cat 'output.txt'
+
+# Test command substitution within single quotes
+echo 'Testing command substitution within single quotes...'
+echo 'Current directory: '`pwd`
+
+# Test arithmetic within single quotes
+echo 'Testing arithmetic within single quotes...'
+echo '2 + 2 = '$((2+2))
+
+# Test special characters within single quotes
+echo 'Testing special characters within single quotes...'
+echo 'Escaping special characters: \! \@ \# \$ \% \^ \& \* \( \) \{ \} \[ \] \; \: \, \. \< \> \? \/ \'
+
+# Test command with quotes and whitespaces
+echo 'Testing command with quotes and whitespaces...'
+echo "This is a command with 'single quotes' and \"double quotes\""
+
+# Test command with parentheses
+echo 'Testing command with parentheses...'
+echo "This is a command with parentheses: $(echo 'inner command')"
+
+# Test command with backticks
+echo 'Testing command with backticks...'
+echo "This is a command with backticks: `echo 'inner command'`"
+
+# Test command with dollar sign
+echo 'Testing command with dollar sign...'
+echo "This is a command with dollar sign: \$MY_VAR"
+
+# Clean up
+rm output.txt
+
+
